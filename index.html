@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projetos | Kamyli Souza</title>
+  <title>Kamyli Souza | Projetos</title>
   <style>
     :root {
       --bg: #0f111a;
@@ -30,82 +30,101 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 3rem 1.5rem;
+      padding: clamp(1.5rem, 5vw, 4rem) clamp(1rem, 4vw, 2rem);
     }
 
     header {
       text-align: center;
-      max-width: 600px;
-      margin-bottom: 3rem;
+      max-width: 700px;
+      width: 100%;
+      margin-bottom: clamp(2rem, 5vw, 3.5rem);
     }
 
     header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.2rem;
       background: linear-gradient(135deg, #a855f7, #ec4899);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
+    header h2 {
+      font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+      font-weight: 500;
+      color: #f1f5f9;
+      margin-bottom: 0.8rem;
+    }
+
     header p {
       color: var(--text-muted);
-      font-size: 1.1rem;
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
     }
 
     main {
       width: 100%;
-      max-width: 800px;
+      max-width: 900px;
       display: grid;
       gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
     }
 
     .card {
       background-color: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
+      border-radius: 14px;
+      padding: clamp(1.25rem, 3vw, 1.75rem);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.25 ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-      box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.15);
+    @media (hover: hover) {
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+        box-shadow: 0 12px 30px -10px rgba(168, 85, 247, 0.25);
+      }
     }
 
-    .card h2 {
-      font-size: 1.3rem;
+    .card h3 {
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
       margin-bottom: 0.5rem;
       color: #fff;
     }
 
     .card p {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: clamp(0.9rem, 2.2vw, 1rem);
       margin-bottom: 1.5rem;
       flex-grow: 1;
     }
 
     .card a {
-      display: inline-block;
-      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
       background-color: var(--accent);
       color: #fff;
       text-decoration: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
       font-weight: 600;
-      font-size: 0.9rem;
-      transition: background-color 0.2s ease;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
     }
 
-    .card a:hover {
-      background-color: var(--accent-hover);
+    .card a:active {
+      transform: scale(0.98);
+    }
+
+    @media (hover: hover) {
+      .card a:hover {
+        background-color: var(--accent-hover);
+      }
     }
 
     footer {
@@ -113,20 +132,22 @@
       padding-top: 3rem;
       color: var(--text-muted);
       font-size: 0.85rem;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Meus Projetos</h1>
+    <h1>Kamyli Souza</h1>
+    <h2>Meus Projetos</h2>
     <p>Alguns dos projetos e ferramentas que desenvolvi.</p>
   </header>
 
   <main>
     <article class="card">
       <div>
-        <h2>Site Oficial</h2>
+        <h3>Site Oficial</h3>
         <p>Portal principal, links da comunidade e informações gerais.</p>
       </div>
       <a href="https://kamylisumire.com/" target="_blank" rel="noopener">Acessar projeto &rarr;</a>
@@ -134,7 +155,7 @@
 
     <article class="card">
       <div>
-        <h2>Organizador de Animes</h2>
+        <h3>Organizador de Animes</h3>
         <p>Ferramenta web para acompanhamento e organização de listas de animes.</p>
       </div>
       <a href="https://kamylisouza.github.io/organizador-de-animes/" target="_blank" rel="noopener">Acessar projeto &rarr;</a>
